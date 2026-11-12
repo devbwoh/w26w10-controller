@@ -18,7 +18,18 @@ repositories {
 	mavenCentral()
 }
 
+dependencyManagement {
+	dependencies {
+		dependency("ch.qos.logback:logback-classic:1.6.5")
+		dependency("ch.qos.logback:logback-core:1.6.5")
+		dependency("com.fasterxml.jackson.core:jackson-databind:2.21.8")
+		dependency("tools.jackson.core:jackson-databind:3.1.8")
+	}
+}
+
 dependencies {
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-scalar:3.2.0")
+
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("tools.jackson.module:jackson-module-kotlin")
